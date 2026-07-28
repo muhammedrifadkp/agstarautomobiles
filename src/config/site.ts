@@ -1,0 +1,56 @@
+export const siteConfig = {
+  name: "AG Star Automobiles",
+  tagline: "Premium Motorcycle Accessories & Performance Bike Parts",
+  description: "Precision-engineered motorcycle accessories, crash guards, luggage racks, and adventure armor built for Indian roads and extreme touring.",
+  url: "https://agstarautomobiles.com",
+  ogImage: "/images/og-image.jpg",
+  contact: {
+    phone: "+91 98765 43210",
+    email: "support@agstarautomobiles.com",
+    address: "Coimbatore, Tamil Nadu, India",
+    instagram: "https://www.instagram.com/agstar_automobiles",
+    instagramAlt: "https://www.instagram.com/moto_agp_",
+  },
+  nav: {
+    desktop: [
+      { name: "Shop All", href: "/shop" },
+      { name: "Bike Finder", href: "/#bike-finder" },
+      { name: "Categories", href: "/shop#categories" },
+      { name: "Bikes", href: "/bikes" },
+      { name: "About Us", href: "/about" },
+      { name: "Support", href: "/contact" },
+    ],
+    mobile: [
+      { name: "Home", href: "/", icon: "Home" },
+      { name: "Shop", href: "/shop", icon: "ShoppingBag" },
+      { name: "Bikes", href: "/bikes", icon: "Bike" },
+      { name: "Wishlist", href: "/wishlist", icon: "Heart" },
+      { name: "Cart", href: "#cart", icon: "ShoppingCart" },
+    ],
+    footer: {
+      shop: [
+        { name: "Crash Guards", href: "/shop?category=crash-guards" },
+        { name: "Saddle Stays", href: "/shop?category=saddle-stays" },
+        { name: "Luggage Racks", href: "/shop?category=luggage-racks" },
+        { name: "Engine Protection", href: "/shop?category=engine-guards" },
+        { name: "Handlebar Guards", href: "/shop?category=handlebar-guards" },
+        { name: "Skid Plates", href: "/shop?category=skid-plates" },
+      ],
+      support: [
+        { name: "Contact Us", href: "/contact" },
+        { name: "Shipping & Delivery", href: "/shipping" },
+        { name: "Warranty Policy", href: "/warranty" },
+        { name: "Returns & Exchanges", href: "/returns" },
+        { name: "Find a Dealer", href: "/dealers" },
+        { name: "Installation Guides", href: "/#installation" },
+      ],
+      company: [
+        { name: "About AG Star", href: "/about" },
+        { name: "Built By Riders", href: "/about#built-by-riders" },
+        { name: "Dealers & Outlets", href: "/dealers" },
+        { name: "Privacy Policy", href: "/privacy-policy" },
+        { name: "Terms of Service", href: "/terms" },
+      ],
+    },
+  },
+};

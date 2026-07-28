@@ -1,0 +1,48 @@
+import { Review } from "@/types";
+
+export const reviews: Review[] = [
+  {
+    id: "rev-1",
+    author: "Daniel R.",
+    location: "Bengaluru, India",
+    bikeModel: "Himalayan 450",
+    rating: 5,
+    date: "14 May 2026",
+    title: "Unmatched build quality on Himalayan trails",
+    comment: "The build quality feels genuinely premium. My Himalayan 450 crash guard took a heavy spill near Zoji La pass without bending or taking frame stress. 100% recommended for long touring.",
+    verifiedPurchase: true,
+  },
+  {
+    id: "rev-2",
+    author: "Sofia M.",
+    location: "Mumbai, India",
+    bikeModel: "Interceptor 650",
+    rating: 5,
+    date: "02 June 2026",
+    title: "Precision bolt-on fitment",
+    comment: "Ordered the complete set — saddle stays, crash guard, and top rack for my Interceptor 650. Fit guide was spot-on and delivery took only two days. Perfect powder coat finish!",
+    verifiedPurchase: true,
+  },
+  {
+    id: "rev-3",
+    author: "Marcus T.",
+    location: "Pune, India",
+    bikeModel: "KTM Adventure 390",
+    rating: 5,
+    date: "28 April 2026",
+    title: "No vibration, solid CNC mounts",
+    comment: "Most aftermarket parts cause high-RPM vibration on 390 Adventure, but AG Star's anti-vibration rubber mounting dampers made it completely buzz-free. Top tier engineering.",
+    verifiedPurchase: true,
+  },
+  {
+    id: "rev-4",
+    author: "Karan V.",
+    location: "Delhi NCR, India",
+    bikeModel: "Hero XPulse 200 4V",
+    rating: 5,
+    date: "19 May 2026",
+    title: "Survived extreme off-road mud & rocks",
+    comment: "The 4mm aluminum skid plate saved my engine crankcase multiple times during off-road trail riding in Himachal. Outstanding crash protection.",
+    verifiedPurchase: true,
+  },
+];
