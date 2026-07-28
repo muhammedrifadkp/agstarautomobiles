@@ -37,6 +37,15 @@ export const metadata: Metadata = {
     "KTM Duke 390 Frame Sliders",
     "Bike Parts India",
   ],
+  icons: {
+    icon: [
+      { url: "/images/favicon.png", type: "image/png" },
+    ],
+    shortcut: ["/images/favicon.png"],
+    apple: [
+      { url: "/images/favicon.png", type: "image/png" },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
