@@ -62,6 +62,7 @@ export function BikeFinder() {
               1. Brand
             </label>
             <select
+              suppressHydrationWarning
               value={selectedBrand}
               onChange={(e) => {
                 const b = e.target.value;
@@ -85,6 +86,7 @@ export function BikeFinder() {
               2. Model
             </label>
             <select
+              suppressHydrationWarning
               value={selectedBikeSlug}
               onChange={(e) => setSelectedBikeSlug(e.target.value)}
               className="w-full bg-black border border-white/15 rounded-xl px-4 py-3 text-sm text-white font-medium focus:outline-none focus:border-white transition-colors"
@@ -103,6 +105,7 @@ export function BikeFinder() {
               3. Year
             </label>
             <select
+              suppressHydrationWarning
               value={selectedYear}
               onChange={(e) => setSelectedYear(Number(e.target.value))}
               className="w-full bg-black border border-white/15 rounded-xl px-4 py-3 text-sm text-white font-medium focus:outline-none focus:border-white transition-colors"
@@ -118,6 +121,7 @@ export function BikeFinder() {
           {/* Submit Action */}
           <div className="flex items-end">
             <button
+              suppressHydrationWarning
               type="submit"
               className="w-full py-3.5 rounded-xl bg-white text-black font-extrabold text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-neutral-200 transition-all transform active:scale-95 shadow-xl"
             >

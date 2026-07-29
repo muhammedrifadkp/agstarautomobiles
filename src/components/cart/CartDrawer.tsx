@@ -167,6 +167,7 @@ export function CartDrawer() {
               {/* Coupon input */}
               <div className="flex gap-2">
                 <input
+                  suppressHydrationWarning
                   type="text"
                   value={couponCode}
                   onChange={(e) => setCouponCode(e.target.value)}
@@ -174,6 +175,7 @@ export function CartDrawer() {
                   className="flex-1 bg-neutral-900 border border-white/10 rounded-lg px-3 py-2 text-xs text-white uppercase placeholder:normal-case focus:outline-none"
                 />
                 <button
+                  suppressHydrationWarning
                   onClick={applyCoupon}
                   className="px-4 py-2 bg-neutral-800 text-white text-xs font-bold uppercase rounded-lg hover:bg-neutral-700 transition-colors"
                 >

@@ -40,6 +40,7 @@ export function Newsletter() {
             className="flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto"
           >
             <input
+              suppressHydrationWarning
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -48,6 +49,7 @@ export function Newsletter() {
               className="w-full bg-neutral-900 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors"
             />
             <button
+              suppressHydrationWarning
               type="submit"
               className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white text-black font-extrabold text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-neutral-200 transition-all shrink-0 shadow-lg"
             >

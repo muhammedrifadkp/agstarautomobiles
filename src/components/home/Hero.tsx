@@ -55,6 +55,7 @@ export function Hero() {
           </Link>
 
           <button
+            suppressHydrationWarning
             onClick={() => setIsGarageOpen(true)}
             className="w-full sm:w-auto px-8 py-4 rounded-xl bg-neutral-900/90 text-white font-extrabold text-xs uppercase tracking-[0.15em] flex items-center justify-center gap-3 border border-white/20 hover:bg-neutral-800 hover:border-white transition-all backdrop-blur-md"
           >

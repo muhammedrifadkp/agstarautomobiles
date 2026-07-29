@@ -66,11 +66,11 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2">
               <div className="relative h-10 w-44">
                 <Image
-                  src="/images/nav-logo.png"
+                  src="/images/white-text-logo-without-bg.png"
                   alt="AG Star Automobiles"
                   fill
                   sizes="176px"
-                  className="object-contain filter brightness-0 invert"
+                  className="object-contain"
                 />
               </div>
             </Link>

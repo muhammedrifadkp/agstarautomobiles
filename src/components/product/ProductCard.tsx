@@ -64,6 +64,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
       {/* Top Right Quick Actions */}
       <div className="absolute top-3 right-3 z-10 flex flex-col gap-2 opacity-90 group-hover:opacity-100 transition-opacity">
         <button
+          suppressHydrationWarning
           onClick={() => toggleWishlist(product)}
           className={`p-2 rounded-full border backdrop-blur-md transition-all ${
             isFavorited
@@ -76,6 +77,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
         </button>
 
         <button
+          suppressHydrationWarning
           onClick={() => toggleCompare(product)}
           className={`p-2 rounded-full border backdrop-blur-md transition-all ${
             isCompared
@@ -105,6 +107,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
         {onQuickView && (
           <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-10">
             <button
+              suppressHydrationWarning
               onClick={() => onQuickView(product)}
               className="w-full py-2 rounded-xl bg-black/80 backdrop-blur-md text-white text-xs font-mono uppercase tracking-wider flex items-center justify-center gap-2 border border-white/20 hover:bg-white hover:text-black transition-colors"
             >
@@ -152,6 +155,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
           </div>
 
           <button
+            suppressHydrationWarning
             onClick={() => addToCart(product)}
             className="px-3.5 py-2 rounded-xl bg-white text-black text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:bg-neutral-200 transition-all transform active:scale-95 shadow-md"
           >

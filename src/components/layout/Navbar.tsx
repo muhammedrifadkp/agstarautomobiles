@@ -39,12 +39,12 @@ export function Navbar({ onOpenSearch }: NavbarProps) {
         <Link href="/" className="flex items-center gap-3 group shrink-0">
           <div className="relative h-9 w-36 sm:h-10 sm:w-44 transition-transform group-hover:scale-105">
             <Image
-              src="/images/nav-logo.png"
+              src="/images/white-text-logo-without-bg.png"
               alt="AG Star Automobiles"
               fill
               priority
               sizes="176px"
-              className="object-contain filter brightness-0 invert"
+              className="object-contain"
             />
           </div>
         </Link>
@@ -66,6 +66,7 @@ export function Navbar({ onOpenSearch }: NavbarProps) {
         <div className="flex items-center gap-3 md:gap-5">
           {/* My Garage Indicator Button */}
           <button
+            suppressHydrationWarning
             onClick={() => setIsGarageOpen(true)}
             className={`hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
               activeBike
@@ -85,6 +86,7 @@ export function Navbar({ onOpenSearch }: NavbarProps) {
 
           {/* Quick Search Button */}
           <button
+            suppressHydrationWarning
             onClick={onOpenSearch}
             className="p-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/10 transition-all flex items-center gap-2 group"
             aria-label="Search"
@@ -97,6 +99,7 @@ export function Navbar({ onOpenSearch }: NavbarProps) {
 
           {/* Wishlist Icon */}
           <button
+            suppressHydrationWarning
             onClick={() => setIsWishlistOpen(true)}
             className="p-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/10 transition-all relative"
             aria-label="Wishlist"
@@ -111,6 +114,7 @@ export function Navbar({ onOpenSearch }: NavbarProps) {
 
           {/* Shopping Cart Drawer Icon */}
           <button
+            suppressHydrationWarning
             onClick={() => setIsCartOpen(true)}
             className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white text-black text-xs font-bold uppercase tracking-wider hover:bg-neutral-200 transition-all transform hover:scale-105 active:scale-95 shadow-lg"
             aria-label="Cart"
@@ -124,6 +128,7 @@ export function Navbar({ onOpenSearch }: NavbarProps) {
 
           {/* Mobile Menu Button */}
           <button
+            suppressHydrationWarning
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-lg text-white hover:bg-white/10"
             aria-label="Toggle Navigation Menu"
@@ -138,6 +143,7 @@ export function Navbar({ onOpenSearch }: NavbarProps) {
         <div className="md:hidden glass-panel border-t border-white/10 mt-3 p-6 animate-in slide-in-from-top-4 duration-200">
           <div className="flex flex-col gap-4">
             <button
+              suppressHydrationWarning
               onClick={() => {
                 setMobileMenuOpen(false);
                 setIsGarageOpen(true);

@@ -139,6 +139,7 @@ export function QuickViewModal({ product, onClose }: QuickViewModalProps) {
           <div className="space-y-3 pt-4 border-t border-white/10">
             <div className="flex gap-3">
               <button
+                suppressHydrationWarning
                 onClick={() => {
                   addToCart(product);
                   onClose();
@@ -150,6 +151,7 @@ export function QuickViewModal({ product, onClose }: QuickViewModalProps) {
               </button>
 
               <button
+                suppressHydrationWarning
                 onClick={() => toggleWishlist(product)}
                 className={`p-3.5 rounded-xl border transition-colors ${
                   isFavorited

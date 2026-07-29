@@ -73,6 +73,7 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
         <div className="relative flex items-center px-6 py-4 border-b border-white/10 bg-black/40">
           <Search className="w-6 h-6 text-neutral-400 mr-4 shrink-0" />
           <input
+            suppressHydrationWarning
             ref={inputRef}
             type="text"
             value={query}
@@ -82,6 +83,7 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
           />
           {query && (
             <button
+              suppressHydrationWarning
               onClick={() => setQuery("")}
               className="p-1 rounded-full text-neutral-400 hover:text-white mr-2"
             >
