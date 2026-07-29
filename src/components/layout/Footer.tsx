@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
-import { ShieldCheck, Truck, Wrench, RotateCcw, Phone, Mail, MapPin } from "lucide-react";
+import { ShieldCheck, Truck, Wrench, RotateCcw, Phone, Mail, MapPin, FileText } from "lucide-react";
 import { InstagramIcon } from "@/components/common/InstagramIcon";
 
 export function Footer() {
@@ -78,18 +78,33 @@ export function Footer() {
               Precision-built motorcycle accessories, crash protection, and adventure luggage armor crafted for Indian roads and extreme long-distance touring.
             </p>
 
-            <div className="pt-2 space-y-2 text-xs">
-              <div className="flex items-center gap-3 text-neutral-300">
-                <MapPin className="w-4 h-4 text-white" />
-                <span>{siteConfig.contact.address}</span>
-              </div>
-              <div className="flex items-center gap-3 text-neutral-300">
-                <Phone className="w-4 h-4 text-white" />
+            <div className="pt-2 space-y-2.5 text-xs font-mono">
+              <a
+                href={siteConfig.contact.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-start gap-3 text-neutral-300 hover:text-white transition-colors group"
+              >
+                <MapPin className="w-4 h-4 text-white shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <span className="leading-snug underline-offset-4 group-hover:underline">{siteConfig.contact.address}</span>
+              </a>
+              <a
+                href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`}
+                className="flex items-center gap-3 text-neutral-300 hover:text-white transition-colors group"
+              >
+                <Phone className="w-4 h-4 text-white shrink-0 group-hover:scale-110 transition-transform" />
                 <span>{siteConfig.contact.phone}</span>
-              </div>
-              <div className="flex items-center gap-3 text-neutral-300">
-                <Mail className="w-4 h-4 text-white" />
+              </a>
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                className="flex items-center gap-3 text-neutral-300 hover:text-white transition-colors group"
+              >
+                <Mail className="w-4 h-4 text-white shrink-0 group-hover:scale-110 transition-transform" />
                 <span>{siteConfig.contact.email}</span>
+              </a>
+              <div className="flex items-center gap-3 text-neutral-400">
+                <FileText className="w-4 h-4 text-white shrink-0" />
+                <span>GSTIN: <strong className="text-white">{siteConfig.contact.gstin}</strong></span>
               </div>
             </div>
 

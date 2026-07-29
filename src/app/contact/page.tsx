@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, FileText } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export default function ContactPage() {
@@ -35,27 +35,47 @@ export default function ContactPage() {
             </h3>
 
             <div className="space-y-4 text-xs font-mono">
-              <div className="flex items-start gap-4">
-                <MapPin className="w-5 h-5 text-white shrink-0 mt-0.5" />
+              <a
+                href={siteConfig.contact.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-start gap-4 p-2 -mx-2 rounded-xl hover:bg-neutral-900 transition-colors group"
+              >
+                <MapPin className="w-5 h-5 text-white shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <div>
-                  <span className="text-neutral-400 block">Factory Address</span>
-                  <span className="text-white font-bold">{siteConfig.contact.address}</span>
+                  <span className="text-neutral-400 block text-[10px] uppercase tracking-wider">Factory & Registered Address ↗</span>
+                  <span className="text-white font-bold group-hover:underline underline-offset-4">{siteConfig.contact.address}</span>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-start gap-4">
-                <Phone className="w-5 h-5 text-white shrink-0 mt-0.5" />
+              <a
+                href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`}
+                className="flex items-start gap-4 p-2 -mx-2 rounded-xl hover:bg-neutral-900 transition-colors group"
+              >
+                <Phone className="w-5 h-5 text-white shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <div>
-                  <span className="text-neutral-400 block">Phone & WhatsApp Support</span>
-                  <span className="text-white font-bold">{siteConfig.contact.phone}</span>
+                  <span className="text-neutral-400 block text-[10px] uppercase tracking-wider">Phone & WhatsApp Support (Click to Call)</span>
+                  <span className="text-white font-bold group-hover:underline underline-offset-4">{siteConfig.contact.phone}</span>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-start gap-4">
-                <Mail className="w-5 h-5 text-white shrink-0 mt-0.5" />
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                className="flex items-start gap-4 p-2 -mx-2 rounded-xl hover:bg-neutral-900 transition-colors group"
+              >
+                <Mail className="w-5 h-5 text-white shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <div>
-                  <span className="text-neutral-400 block">Email Support</span>
-                  <span className="text-white font-bold">{siteConfig.contact.email}</span>
+                  <span className="text-neutral-400 block text-[10px] uppercase tracking-wider">Email Support (Click to Mail)</span>
+                  <span className="text-white font-bold group-hover:underline underline-offset-4">{siteConfig.contact.email}</span>
+                </div>
+              </a>
+
+              <div className="flex items-start gap-4 pt-4 border-t border-white/10 px-2">
+                <FileText className="w-5 h-5 text-white shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-neutral-400 block text-[10px] uppercase tracking-wider">GSTIN / UIN</span>
+                  <span className="text-white font-bold">{siteConfig.contact.gstin}</span>
+                  <span className="text-[10px] text-neutral-500 block mt-0.5">State: Karnataka (Code: 29)</span>
                 </div>
               </div>
             </div>

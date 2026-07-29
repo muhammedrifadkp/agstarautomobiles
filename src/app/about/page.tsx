@@ -25,7 +25,7 @@ export default function AboutPage() {
             AG Star Automobiles was founded by touring riders and mechanical engineers who were dissatisfied with weak, vibrating aftermarket bike parts that rusted or bent during real-world adventure riding.
           </p>
           <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-mono">
-            Based out of Coimbatore, India, our state-of-the-art facility manufactures precision cold-rolled steel crash guards, T6 aluminum top racks, and CNC skid plates using 3D chassis laser scan modeling.
+            Based out of Bengaluru, India, our state-of-the-art facility manufactures precision cold-rolled steel crash guards, T6 aluminum top racks, and CNC skid plates using 3D chassis laser scan modeling.
           </p>
         </div>
 
