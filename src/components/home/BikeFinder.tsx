@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Bike as BikeIcon, Search, ShieldCheck, Check } from "lucide-react";
+import { Bike as BikeIcon, Search } from "lucide-react";
 import { bikes } from "@/data/bikes";
 import { useGarage } from "@/hooks/useGarage";
 
@@ -34,7 +34,7 @@ export function BikeFinder() {
   };
 
   return (
-    <section id="bike-finder" className="relative z-20 -mt-10 site-container">
+    <section id="bike-finder" className="relative z-20 -mt-12 sm:-mt-16 site-container transition-all">
       <div className="bg-metal-surface rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl backdrop-blur-xl">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 pb-4 border-b border-white/10 gap-4">
           <div className="flex items-center gap-3">

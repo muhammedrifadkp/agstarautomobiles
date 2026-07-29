@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { AppProviders } from "@/providers/AppProviders";
 import { MainLayout } from "@/components/layout/MainLayout";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -54,6 +55,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     siteName: siteConfig.name,
   },
+  metadataBase: new URL(siteConfig.url || "https://agstarautomobiles.com"),
 };
 
 export default function RootLayout({
@@ -71,6 +73,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className="min-h-full flex flex-col bg-black text-white font-sans"
       >
+        <JsonLd />
         <AppProviders>
           <MainLayout>{children}</MainLayout>
         </AppProviders>

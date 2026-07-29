@@ -1,15 +1,47 @@
+import dynamic from "next/dynamic";
 import { Hero } from "@/components/home/Hero";
 import { BikeFinder } from "@/components/home/BikeFinder";
 import { FeaturedCategories } from "@/components/home/FeaturedCategories";
-import { FeaturedBikes } from "@/components/home/FeaturedBikes";
-import { FeaturedProducts } from "@/components/home/FeaturedProducts";
-import { BestSellers } from "@/components/home/BestSellers";
-import { AdventureBanner } from "@/components/home/AdventureBanner";
-import { WhyAGStar } from "@/components/home/WhyAGStar";
-import { BuiltByRiders } from "@/components/home/BuiltByRiders";
-import { InstagramFeed } from "@/components/home/InstagramFeed";
-import { Testimonials } from "@/components/home/Testimonials";
-import { Newsletter } from "@/components/home/Newsletter";
+
+// Dynamic imports for below-the-fold sections to boost initial loading speed
+const FeaturedBikes = dynamic(
+  () => import("@/components/home/FeaturedBikes").then((m) => m.FeaturedBikes),
+  { loading: () => <div className="min-h-[400px] bg-black/40 animate-pulse" /> }
+);
+
+const FeaturedProducts = dynamic(
+  () => import("@/components/home/FeaturedProducts").then((m) => m.FeaturedProducts),
+  { loading: () => <div className="min-h-[500px] bg-black/40 animate-pulse" /> }
+);
+
+const BestSellers = dynamic(
+  () => import("@/components/home/BestSellers").then((m) => m.BestSellers),
+  { loading: () => <div className="min-h-[400px] bg-black/40 animate-pulse" /> }
+);
+
+const AdventureBanner = dynamic(
+  () => import("@/components/home/AdventureBanner").then((m) => m.AdventureBanner)
+);
+
+const WhyAGStar = dynamic(
+  () => import("@/components/home/WhyAGStar").then((m) => m.WhyAGStar)
+);
+
+const BuiltByRiders = dynamic(
+  () => import("@/components/home/BuiltByRiders").then((m) => m.BuiltByRiders)
+);
+
+const InstagramFeed = dynamic(
+  () => import("@/components/home/InstagramFeed").then((m) => m.InstagramFeed)
+);
+
+const Testimonials = dynamic(
+  () => import("@/components/home/Testimonials").then((m) => m.Testimonials)
+);
+
+const Newsletter = dynamic(
+  () => import("@/components/home/Newsletter").then((m) => m.Newsletter)
+);
 
 export default function HomePage() {
   return (

@@ -8,36 +8,35 @@ import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { useCart } from "@/hooks/useCart";
 import { useWishlist } from "@/hooks/useWishlist";
 import { useGarage } from "@/hooks/useGarage";
-import { Search, ShoppingBag, Heart, Wrench, Menu, X, Bike } from "lucide-react";
+import { Search, ShoppingBag, Heart, Menu, X, Bike } from "lucide-react";
 
 interface NavbarProps {
   onOpenSearch: () => void;
 }
 
 export function Navbar({ onOpenSearch }: NavbarProps) {
-  const { scrollDirection, isScrolled } = useScrollDirection();
+  const { isScrolled } = useScrollDirection();
   const { totalItems, setIsCartOpen } = useCart();
   const { totalWishlistItems, setIsWishlistOpen } = useWishlist();
   const { activeBike, setIsGarageOpen } = useGarage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Sticky header hide on scroll down, show on scroll up
-  const isHidden = scrollDirection === "down" && isScrolled && !mobileMenuOpen;
-
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isHidden ? "-translate-y-full" : "translate-y-0"
-      } ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 translate-y-0 ${
         isScrolled
-          ? "glass-panel shadow-2xl py-3 border-b border-white/10"
-          : "bg-black/60 backdrop-blur-md py-4 border-b border-white/5"
+          ? "bg-black/90 backdrop-blur-xl py-3 border-b border-white/10 shadow-2xl"
+          : "bg-transparent py-5 border-b border-transparent"
       }`}
     >
       <div className="site-container flex items-center justify-between">
         {/* Official Brand Logo */}
         <Link href="/" className="flex items-center gap-3 group shrink-0">
-          <div className="relative h-9 w-36 sm:h-10 sm:w-44 transition-transform group-hover:scale-105">
+          <div
+            className={`relative h-9 w-36 sm:h-10 sm:w-44 transition-all duration-300 group-hover:scale-105 ${
+              isScrolled ? "brightness-125 drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]" : "brightness-100"
+            }`}
+          >
             <Image
               src="/images/white-text-logo-without-bg.png"
               alt="AG Star Automobiles"
@@ -55,7 +54,11 @@ export function Navbar({ onOpenSearch }: NavbarProps) {
             <Link
               key={link.name}
               href={link.href}
-              className="text-xs uppercase tracking-widest text-neutral-300 hover:text-white font-medium transition-colors hover:scale-105 transform"
+              className={`text-xs uppercase tracking-widest font-medium transition-all hover:scale-105 transform ${
+                isScrolled
+                  ? "text-white hover:text-white font-semibold"
+                  : "text-neutral-300 hover:text-white"
+              }`}
             >
               {link.name}
             </Link>
@@ -68,10 +71,10 @@ export function Navbar({ onOpenSearch }: NavbarProps) {
           <button
             suppressHydrationWarning
             onClick={() => setIsGarageOpen(true)}
-            className={`hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+            className={`hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all ${
               activeBike
                 ? "bg-white/10 border-white/20 text-white hover:bg-white/20"
-                : "bg-neutral-900/80 border-white/10 text-neutral-400 hover:text-white hover:border-white/20"
+                : "bg-neutral-900/80 border-white/10 text-neutral-300 hover:text-white hover:border-white/30"
             }`}
             title="My Garage - Select your bike to verify fitment"
           >
@@ -116,7 +119,7 @@ export function Navbar({ onOpenSearch }: NavbarProps) {
           <button
             suppressHydrationWarning
             onClick={() => setIsCartOpen(true)}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white text-black text-xs font-bold uppercase tracking-wider hover:bg-neutral-200 transition-all transform hover:scale-105 active:scale-95 shadow-lg"
+            className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white text-black text-xs font-bold uppercase tracking-wider hover:bg-neutral-200 transition-all transform hover:scale-105 active:scale-95 shadow-lg"
             aria-label="Cart"
           >
             <ShoppingBag className="w-4 h-4" />
